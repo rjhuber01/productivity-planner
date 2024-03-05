@@ -50,5 +50,9 @@ input, button {
 button {
   text-align: center;
   margin-bottom: 15px;
+  background: none;
+  border-style: solid;
+  border-color: lightgrey;
+  color: lightgrey;
 }
 
