@@ -1,17 +1,25 @@
 
 public class Task {
-    private String name, date; 
-    private int month, day, year, color, rank, status;
+    private String folderName, date; 
+    private int month, day, year, folderID, color, rank, status;
 
     public Task() {
 
     }
-    public void setName(String name){
-        this.name = name;
+    public void setFolderName(String folderName){
+        this.folderName = folderName;
     }
 
-    public String getName(){
-        return name;
+    public String getFolderName(){
+        return folderName;
+    }
+
+    public void setFolderID(int folderID){
+        this.folderID = folderID;
+    }
+
+    public int getFolderID(){
+        return folderID;
     }
 
     public void setDate(int month, int day, int year){

@@ -1,9 +1,9 @@
 
-public class Actor {
+public class actorAccount {
     private String firstName, lastName, email, password;
-    private int notification;
+   
     
-    public Actor() {
+    public actorAccount() {
 
     }
 
@@ -20,7 +20,7 @@ public class Actor {
     }
 
     public String getlastName(){
-        return firstName;
+        return lastName;
     }
 
     public void setEmail(String email){
@@ -31,19 +31,5 @@ public class Actor {
         return email;
     }
 
-    public void setPassword(String password){
-        this.password = password;
-    }
-
-    public String getPassword(){
-        return password;
-    }
-
-    public void setNotification(int notification){
-        this.notification = notification;
-    }
-
-    public int getNotification(){
-        return notification;
-    }
+    
 }

@@ -1,4 +1,5 @@
 
 public class Assistant{
-    private 
-}
+    private string
+} Actor 
+tasks
