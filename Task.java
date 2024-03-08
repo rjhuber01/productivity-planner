@@ -1,17 +1,19 @@
+import java.time.LocalDate;
+
 
 public class Task {
-    private String folderName, date; 
-    private int month, day, year, folderID, color, rank, status;
+    private String taskName, ; 
+    private int month, day, year, expectedTime, dueDate, folderID, color, rank, status;
 
     public Task() {
 
     }
-    public void setFolderName(String folderName){
-        this.folderName = folderName;
+    public void setTaskName(String taskName){
+        this.taskName = taskName;
     }
 
-    public String getFolderName(){
-        return folderName;
+    public String getTaskName(){
+        return taskName;
     }
 
     public void setFolderID(int folderID){
@@ -22,14 +24,23 @@ public class Task {
         return folderID;
     }
 
-    public void setDate(int month, int day, int year){
+    public void setExpectedTime(int expectedTime){
+        this.expectedTime = expectedTime;
+    }
+
+    public int getExpectedTime(){
+        return expectedTime;
+    }
+
+    public void setDueDate(int month, int day, int year){
         this.month = month;
         this.day = day;
         this.year = year;
     }
 
-    public String getDate(){
-        return date;
+    public int  getdueDate(){
+        LocalDate.getMonthValue(int month);
+        
     }
 
     public void setColor(int color){
@@ -55,6 +66,8 @@ public class Task {
     public int getRank(){
         return rank;
     }
+
+
 
 
 }
