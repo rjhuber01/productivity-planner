@@ -13,10 +13,6 @@ public class accountStorage{
     	accountStorage.add(newAccount);
     }
     
-    public void deleteAccount(actorAccount account) {
-    	accountStorage.remove(account);
-    }
-    
     public actorAccount getAccount(String email) {
     	for (actorAccount account : accountStorage) {
             if (account.getEmail().equals(email)) {
@@ -24,5 +20,9 @@ public class accountStorage{
             }
         }
         return null;
+    }
+    
+    public void deleteAccount(actorAccount account) {
+    	accountStorage.remove(account);
     }
 }
