@@ -12,21 +12,28 @@
     <div class="content">
       <div class="sideBarMenu">
         
-       <form class="menuItem" action="http://localhost:8081/prodAssistant/pomoTimer" method="GET">
-      	<input type="submit" value="Pomodoro">
-      </form>
+        <h3> Menu </h3>
+
+        <form action="http://localhost:8081/prodAssistant/dashboard" method="GET">
+          <button class="menuItem"> <span class=buttonText"> Home </span> </button>
+        </form>
+        
+        <form action="http://localhost:8081/prodAssistant/pomoTimer" method="GET">
+          <button class="menuItem"> <span class=buttonText> Pomodoro </span> </button>
+        </form>
       
-      	<form class="menuItem" action="http://localhost:8081/prodAssistant/tasks" method="GET">
-      		<input type="submit" value="Tasks">
+      	<form action="http://localhost:8081/prodAssistant/tasks" method="GET">
+      		<button class="menuItem"> <span class=buttonText> Tasks </span> </button>
       	</form>
       	
-       	<form class="menuItem" action="http://localhost:8081/prodAssistant/calendar" method="GET">
-      		<input type="submit" value="Calendar">
+       	<form action="http://localhost:8081/prodAssistant/calendar" method="GET">
+      		<button class="menuItem"> <span class=buttonText> Calendar </span> </button>
       	</form>  
       	
-       	<form class="menuItem" action="http://localhost:8081/prodAssistant/settings" method="GET">
-      		<input type="submit" value="Settings">
-      	</form>  	
+       	<form action="http://localhost:8081/prodAssistant/settings" method="GET">
+      		<button class="menuItem"> <span class=buttonText> Settings </span> </button>
+      	</form> 
+        <button class="menuItem"> <span class=buttonText> Logout </span> </button>	
       </div>
 
       <div class="userSummary">
