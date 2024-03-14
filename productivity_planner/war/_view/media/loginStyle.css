@@ -1,6 +1,6 @@
 body {
   height: 100vh;
-  background-image: url("${pageContext.request.contextPath}/_view/media/Login_Background.png");
+  background-image: url("Login_Background.png");
   background-size: contain;
   background-repeat: repeat;
   background-position: center;
@@ -42,17 +42,21 @@ label {
   font-size: 24px;
 }
 
-input, button {
+input, form {
   margin-top: 8px;
   font-size: 20px;
 }
 
-button {
+form {
   text-align: center;
   margin-bottom: 15px;
   background: none;
   border-style: solid;
   border-color: lightgrey;
   color: lightgrey;
+}
+
+form:hover {
+	cursor: pointer;
 }
 

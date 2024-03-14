@@ -13,7 +13,10 @@
       <input type="text" placeholder="Email"> <br> <br>
       <label class="userText" for="password"> Password </label> <br> 
       <input type="password" placeholder="Password"> <br> 
-      <button> Submit </button>
+      <!-- <button> Submit </button>  -->
+      <form action="http://localhost:8081/prodAssistant/dashboard" method="GET">
+      	<input type="submit" value="Submit">
+      </form>
     </div>
   </body>
 
