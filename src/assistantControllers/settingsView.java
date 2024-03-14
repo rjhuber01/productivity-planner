@@ -20,10 +20,6 @@ public class settingsView {
     	//return;
     //}
 
-    public void deleteAccount() {
-    	
-    }
-
     public void changePassword(String currentPassword, String newPassword) {
     	if(currentPassword == actorAccount.getPassword()) {
     		actorAccount.setPassword(newPassword);

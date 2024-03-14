@@ -18,6 +18,9 @@ public class pomodoroView{
     	this.task = inputTask;
     }
     
+    public Task getCurrentTask () {
+    	return task;
+    }
     public void setRestPeriod(boolean restPeriod) {
     	this.restPeriod = restPeriod;
     }
