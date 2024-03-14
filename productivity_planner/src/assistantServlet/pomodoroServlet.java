@@ -24,7 +24,7 @@ public class pomodoroServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		System.out.println("Login Servlet: doPost");
+		System.out.println("Pomodoro Servlet: doPost");
 		
 		// holds the error message text, if there is any
 		String errorMessage = null;

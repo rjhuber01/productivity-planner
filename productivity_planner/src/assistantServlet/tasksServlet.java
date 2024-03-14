@@ -14,17 +14,17 @@ public class tasksServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 
-		System.out.println("Calendar Servlet: doGet");	
+		System.out.println("Tasks Servlet: doGet");	
 		
 		// call JSP to generate empty form
-		req.getRequestDispatcher("/_view/calendar.jsp").forward(req, resp);
+		req.getRequestDispatcher("/_view/tasks.jsp").forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		
-		System.out.println("Login Servlet: doPost");
+		System.out.println("Task Servlet: doPost");
 		
 		// holds the error message text, if there is any
 		String errorMessage = null;
