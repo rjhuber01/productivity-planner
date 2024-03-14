@@ -1,7 +1,6 @@
 package edu.ycp.cs320.lab02.main;
 
 import java.io.File;
-
 import org.eclipse.jetty.server.Server;
 
 public class Main {
