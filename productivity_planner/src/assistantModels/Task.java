@@ -42,11 +42,10 @@ public class Task {
         this.month = month;
         this.day = day;
         this.year = year;
-    }*/
+    } */
 
     public Date getdueDate(){
         return dueDate;
-        
     }
 
     // TODO: Fix date
