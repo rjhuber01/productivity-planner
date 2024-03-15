@@ -12,7 +12,7 @@ public class accountStorage{
     	newAccount.setPassword(password);
     	accountStorage.add(newAccount);
     }
-    
+    //this method returns an actor account from the arraylist
     public actorAccount getAccount(String email) {
     	for (actorAccount account : accountStorage) {
             if (account.getEmail().equals(email)) {
