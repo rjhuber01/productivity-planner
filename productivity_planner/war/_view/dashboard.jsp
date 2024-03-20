@@ -12,10 +12,10 @@
     <div class="content">
       <div class="sideBarMenu">
         
-        <h3> Menu </h3>
+        <h2> Menu </h2>
 
         <form action="http://localhost:8081/prodAssistant/dashboard" method="GET">
-          <button class="menuItem"> <span class=buttonText"> Home </span> </button>
+          <button class="menuItem"> <span class=buttonText> Home </span> </button>
         </form>
         
         <form action="http://localhost:8081/prodAssistant/pomoTimer" method="GET">
@@ -27,24 +27,29 @@
       	</form>
       	
        	<form action="http://localhost:8081/prodAssistant/calendar" method="GET">
-      		<button class="menuItem"> <span class=buttonText> Calendar </span> </button>
+      		<button class="menuItem" id="textSeparator"> <span class=buttonText> Calendar </span> </button>
       	</form>  
       	
        	<form action="http://localhost:8081/prodAssistant/settings" method="GET">
       		<button class="menuItem"> <span class=buttonText> Settings </span> </button>
       	</form> 
-        <button class="menuItem"> <span class=buttonText> Logout </span> </button>	
+        <button class="menuItem"> <span class=buttonText> Logout </span> </button>
       </div>
 
       <div class="userSummary">
-        <h3> Hello, User </h3>
-        <h4> Upcoming Assignments: </h4>
-        <table> 
-          <th scope="col"> Assignment: </th>
-          <th> Course: </th>
-          <th> Estimated Time </th>
-          <th> Due: </th>
-        </table>
+        <h1> Hello, User </h1>
+        <h2> Upcoming Things to Do: </h2>
+        <div class="userSummaryTable">
+          <h3> Task: </h3>
+          <h3> Due Date: </h3>
+          <!-- Status & Rank == progress & priority, respectively-->
+          <h3> Progress: </h3>
+          <h3> Priority: </h3>
+          <h3> Description: </h3>
+        </div>
+
+        <!-- Populate data from DB -->
+        <!-- Data: taskName dueDate Status Rank taskDescription -->
       </div>
     </div>
   </body>

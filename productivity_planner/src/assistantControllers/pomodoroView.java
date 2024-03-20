@@ -14,6 +14,10 @@ public class pomodoroView{
         return time;
     }
     
+    public Task getCurrentTask() {
+    	return task;
+    }
+    
     public void setCurrentTask (Task inputTask) {
     	this.task = inputTask;
     }
