@@ -6,6 +6,10 @@
          xmlns="http://java.sun.com/xml/ns/javaee">
 
   <!-- Servlets --><servlet>
+  	<servlet-name>registerServlet</servlet-name>
+  	<servlet-class>assistantServlet.registerServlet</servlet-class>
+</servlet>
+  <servlet>
   	<servlet-name>LoginServlet</servlet-name>
   	<servlet-class>assistantServlet.LoginServlet</servlet-class>
 </servlet>
@@ -31,6 +35,10 @@
 	</servlet>
 
 	<!-- Servlet mappings --><servlet-mapping>
+		<servlet-name>registerServlet</servlet-name>
+		<url-pattern>/register</url-pattern>
+</servlet-mapping>
+	<servlet-mapping>
   	<servlet-name>LoginServlet</servlet-name>
   	<url-pattern>/login</url-pattern>
 </servlet-mapping>
