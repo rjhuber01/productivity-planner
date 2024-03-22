@@ -86,3 +86,24 @@ textarea {
   font-size: 50px;
   cursor: pointer;
 }
+
+/* Handle the table for tasks */
+#taskTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#taskTable th, .taskTable td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid;
+  border-color: rgba(204,204,204, 0.4);
+}
+
+#taskTable th {
+  font-weight: bold;
+}
+
+
+
+
