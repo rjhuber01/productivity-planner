@@ -1,7 +1,6 @@
 package edu.ycp.cs320.lab02.main;
 
 import java.io.File;
-
 import org.eclipse.jetty.server.Server;
 
 public class Main {
@@ -12,7 +11,7 @@ public class Main {
 		
 		// get a server for port 8081
 		System.out.println("CREATING: web server on port 8081");
-		Server server = launcher.launch(true, 8081, warFile.getAbsolutePath(), "/lab02");
+		Server server = launcher.launch(true, 8081, warFile.getAbsolutePath(), "/prodAssistant");
 
         // Start things up!		
 		System.out.println("STARTING: web server on port 8081");

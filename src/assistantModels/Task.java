@@ -3,14 +3,14 @@ import java.util.Date;
 
 
 public class Task {
-    private String taskName, taskDescription; 
-    private int month, day, year, days, hours, minutes, timeUnit, expectedTime, folderID, color, frequency, rank, status;
+    private String taskName, taskDescription, folderName, dueDate;
+    private int timeUnit, expectedTime, folderID, color, frequency, rank, status;
     //private Date dueDate;
 
-    private Date dueDate;
+    //private Date dueDate;
 
     public Task() {
-        dueDate = new Date();
+        //dueDate = new Date();
     }
 
     public void setTaskName(String taskName){
@@ -28,6 +28,14 @@ public class Task {
     public int getFolderID(){
         return folderID;
     }
+    
+    public void setFolderName(String folderName) {
+    	this.folderName = folderName;
+    }
+    
+    public String getFolderName() {
+    	return folderName;
+    }
 
     public void setExpectedTime(int expectedTime){
         this.expectedTime = expectedTime;
@@ -42,11 +50,14 @@ public class Task {
         this.month = month;
         this.day = day;
         this.year = year;
-    }*/
+    } */
 
-    public Date getdueDate(){
+    public void setDueDate(String dueDate) {
+    	this.dueDate = dueDate;
+    }
+    
+    public String getDueDate(){
         return dueDate;
-        
     }
 
     // TODO: Fix date

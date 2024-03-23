@@ -1,9 +1,8 @@
-package assistantControllers;
-
+package productivity_planner_Tests.assistantControllers;
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
+import assistantControllers.calenderView;
 
 public class calenderViewTest {
 	private calenderView calenderView = new calenderView();

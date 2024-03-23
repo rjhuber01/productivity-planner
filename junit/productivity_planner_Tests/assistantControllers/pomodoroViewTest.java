@@ -1,4 +1,5 @@
-package assistantControllers;
+package productivity_planner_Tests.assistantControllers;
+import assistantControllers.pomodoroView;
 
 import static org.junit.Assert.*;
 
@@ -16,6 +17,7 @@ public class pomodoroViewTest {
 		pomo.setTime(time);
 		assertTrue(pomo.getTime() == 1);
 	}
+	
 	@Test
 	public void testGetAndSetCurrentTask() {
 		pomodoroView pomo = new pomodoroView();
@@ -24,6 +26,7 @@ public class pomodoroViewTest {
 		pomo.setCurrentTask(inputTask);
 		assertTrue(pomo.getCurrentTask() == inputTask);
 	}
+	
 	@Test
 	public void testGetAndSetRestPeriod() {
 		pomodoroView pomo = new pomodoroView();
