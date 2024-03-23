@@ -8,6 +8,8 @@
 
   <body> 
     <div class="loginDiv">
+      <!-- Explicity call GET method for personal understanding -->
+      <a href="http://localhost:8081/prodAssistant/register" class="registerButton" method="GET"> Register Now </a>
       <h3> Login </h3>
       <label class="userText" for="username"> Username </label> <br>
       <input type="text" placeholder="Email"> <br> <br>

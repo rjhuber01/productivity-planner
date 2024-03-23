@@ -54,7 +54,7 @@ public class assistantTest {
         task.setStatus(0);
 
         assistant.setTask("Study", "Description", 2, 3, 2, 2, 0, 0);
-        Task retrievedTask = assistant.getTask();
+        Task retrievedTask = assistant.getTask(0);
 
         assertEquals(task.getTaskDescription(), retrievedTask.getTaskDescription());
         assertEquals(task.getTimeUnit(), retrievedTask.getTimeUnit());

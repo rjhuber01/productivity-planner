@@ -12,7 +12,6 @@ public class Assistant {
     private actorAccount userAccount = new actorAccount();
     private taskFolder folder = new taskFolder();
     private ArrayList<Task> arrTask = new ArrayList<Task>();
-    private int i;
     private final String DEFAULTFOLDER = "AllTasks";
     
     public void setAssistant(Assistant assistant){
@@ -61,26 +60,37 @@ public class Assistant {
         if()
     
     } */
-
+    
+    public void setTask(String taskName, String taskFolder, String dueDate, int expectedTime, int status, String taskDescription) {
+    	Task task = new Task();
+    	task.setTaskName(taskName);
+    	task.setFolderName(taskFolder);
+    	task.setDueDate(dueDate);
+    	task.setExpectedTime(expectedTime);
+    	task.setStatus(status);
+    	task.setTaskDescription(taskDescription);
+    	arrTask.add(task);
+    }
+    
     public void setTask(String taskName, String taskDescription, int timeUnit, 
     int expectedTime, int color, int frequency, int rank, int status){
-        arrTask.get(i).setTaskDescription(taskDescription);
-        arrTask.get(i).setTimeUnit(timeUnit);
-        arrTask.get(i).setColor(color);
-        arrTask.get(i).setFrequency(frequency);
-        arrTask.get(i).setTaskName(taskName);
-        arrTask.get(i).setRank(rank);
-        arrTask.get(i).setStatus(status);
-
+    	Task task = new Task();
+        task.setTaskDescription(taskDescription);
+        task.setTimeUnit(timeUnit);
+        task.setColor(color);
+        task.setFrequency(frequency);
+        task.setTaskName(taskName);
+        task.setRank(rank);
+        task.setStatus(status);
+        arrTask.add(task);
     }
 
-    public Task getTask(){
+    public Task getTask(int i){
         return arrTask.get(i);
     }
 
-    public void deleteTask(int index){
-        index = i;
-        arrTask.remove(index);
+    public void deleteTask(int i){
+        arrTask.remove(i);
     }
 
 

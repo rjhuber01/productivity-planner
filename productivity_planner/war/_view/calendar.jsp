@@ -11,11 +11,11 @@
   <body> 
     <div class="content">
       <div class="sideBarMenu">
-
-        <h3> Menu </h3>
+        
+        <h2> Menu </h2>
 
         <form action="http://localhost:8081/prodAssistant/dashboard" method="GET">
-          <button class="menuItem"> <span class=buttonText"> Home </span> </button>
+          <button class="menuItem"> <span class=buttonText> Home </span> </button>
         </form>
         
         <form action="http://localhost:8081/prodAssistant/pomoTimer" method="GET">
@@ -27,7 +27,7 @@
       	</form>
       	
        	<form action="http://localhost:8081/prodAssistant/calendar" method="GET">
-      		<button class="menuItem"> <span class=buttonText> Calendar </span> </button>
+      		<button class="menuItem" id="textSeparator"> <span class=buttonText> Calendar </span> </button>
       	</form>  
       	
        	<form action="http://localhost:8081/prodAssistant/settings" method="GET">

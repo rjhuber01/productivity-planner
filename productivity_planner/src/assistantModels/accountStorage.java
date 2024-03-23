@@ -18,7 +18,12 @@ public class accountStorage{
     	accountStorage.remove(account);
     }
     
-    public static actorAccount getAccount(String email) {
-    	return userAccount;
+    public actorAccount getAccount(String email) {
+    	for (actorAccount account : accountStorage) {
+            if (account.getEmail().equals(email)) {
+                return account;
+            }
+        }
+        return null;
     }
 }
