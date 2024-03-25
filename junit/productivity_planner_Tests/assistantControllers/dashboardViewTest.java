@@ -1,4 +1,4 @@
-package assistantControllers;
+package productivity_planner_Tests.assistantControllers;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
+import assistantControllers.Assistant;
 import assistantModels.Task;
 import assistantModels.taskFolder;
 

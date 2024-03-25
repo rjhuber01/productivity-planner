@@ -14,13 +14,14 @@ public class pomodoroView{
         return time;
     }
     
+    public Task getCurrentTask() {
+    	return task;
+    }
+    
     public void setCurrentTask (Task inputTask) {
     	this.task = inputTask;
     }
     
-    public Task getCurrentTask () {
-    	return task;
-    }
     public void setRestPeriod(boolean restPeriod) {
     	this.restPeriod = restPeriod;
     }

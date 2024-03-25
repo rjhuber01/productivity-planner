@@ -1,8 +1,9 @@
-package assistantControllers;
-
+package productivity_planner_Tests.assistantControllers;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import assistantControllers.settingsView;
 
 public class settingsViewTest {
 

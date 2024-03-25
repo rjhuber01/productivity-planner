@@ -1,10 +1,13 @@
-package assistantModels;
+package productivity_planner_Tests.assistantModels;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
 import org.junit.Test;
+
+import assistantModels.accountStorage;
+import assistantModels.actorAccount;
 
 public class accountStorageTest {
 
