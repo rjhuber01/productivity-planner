@@ -13,6 +13,7 @@ public class Assistant {
     private taskFolder folder = new taskFolder();
     private ArrayList<Task> arrTask = new ArrayList<Task>();
     private final String DEFAULTFOLDER = "AllTasks";
+    private static int taskIndexCounter = 1;
     
     public void setAssistant(Assistant assistant){
         this.assistant = assistant;
@@ -63,34 +64,21 @@ public class Assistant {
     
     public void setTask(String taskName, String taskFolder, String dueDate, int expectedTime, int status, String taskDescription) {
     	Task task = new Task();
+    	task.setTaskID(++taskIndexCounter);
     	task.setTaskName(taskName);
-    	if(taskFolder == null) {
-    		task.setFolderName("General Tasks");
-    	}
-    	else {
-    		task.setFolderName(taskFolder);
-    	}
+    	task.setFolderName(taskFolder);
     	task.setDueDate(dueDate);
     	task.setExpectedTime(expectedTime);
     	task.setStatus(status);
-    	if(taskDescription == null) {
-    		task.setTaskDescription("No description");
-    	}
-    	else {
-    		task.setTaskDescription(taskDescription);
-    	}
+    	task.setTaskDescription(taskDescription);
     	arrTask.add(task);
     }
     
     public void setTask(String taskName, String taskDescription, int timeUnit, 
     int expectedTime, int color, int frequency, int rank, int status){
     	Task task = new Task();
-    	if(taskDescription == null) {
-    		task.setTaskDescription("No description");
-    	}
-    	else {
-    		task.setTaskDescription(taskDescription);
-    	}
+    	task.setTaskID(taskIndexCounter++);
+        task.setTaskDescription(taskDescription);
         task.setTimeUnit(timeUnit);
         task.setColor(color);
         task.setFrequency(frequency);
@@ -107,9 +95,28 @@ public class Assistant {
     public void deleteTask(int i){
         arrTask.remove(i);
     }
-
-
-
+    
+    public void updateExistingTask(Task existingTask, String taskName, String taskFolder, String dueDate, int expectedTime, int status, String taskDescription) {
+    	existingTask.setTaskName(taskName);
+    	existingTask.setFolderName(taskFolder);
+    	existingTask.setDueDate(dueDate);
+    	existingTask.setExpectedTime(expectedTime);
+    	existingTask.setStatus(status);
+    	existingTask.setTaskDescription(taskDescription);
+    }
+    
+    public Task getTaskByID(int taskID) {
+    	for (Task task : arrTask) {
+    		if(task.getTaskID() == taskID) {
+    			return task;
+    		}
+    	}
+    	return null;
+    }
+    
+    public int getTaskCounter() {
+    	return taskIndexCounter;
+    }
 
 
 }  
