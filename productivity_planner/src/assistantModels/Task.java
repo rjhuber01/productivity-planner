@@ -5,6 +5,7 @@ import java.util.Date;
 public class Task {
     private String taskName, taskDescription, folderName, dueDate;
     private int timeUnit, expectedTime, folderID, color, frequency, rank, status;
+    private int taskID;
     //private Date dueDate;
 
     //private Date dueDate;
@@ -111,8 +112,42 @@ public class Task {
     public String getTaskDescription(){
         return taskDescription;
     }
-
-
-
-
+    
+    public int getTaskID() {
+    	return taskID;
+    }
+    
+    public void setTaskID(int taskID) {
+    	this.taskID = taskID;
+    }
+    
+    public void updateTask(Task newTask) {
+    	//Task Name & Due Date are always required so never null
+    	if(newTask.getTaskName() != null) {
+    		this.setTaskName(newTask.getTaskName());
+    	}
+    	
+    	if(newTask.getFolderName() != null) {
+    		this.setFolderName(newTask.getFolderName());
+    	}
+    	
+    	if(newTask.getDueDate() != null) {
+    		this.setDueDate(newTask.getDueDate());
+    	}
+    	
+    	//DISCUSS: How do we handle this? 
+    	if(newTask.getExpectedTime() != 0) {
+    		this.setExpectedTime(newTask.getExpectedTime());
+    	}
+    	
+    	if(newTask.getStatus() != 0) {
+    		this.setStatus(newTask.getStatus());
+    	}
+    	
+    	if(newTask.getTaskDescription() != null) {
+    		this.setTaskDescription(newTask.getTaskDescription());
+    	}
+    	
+    	//TODO: Add more fields as needed. 
+    }
 }
