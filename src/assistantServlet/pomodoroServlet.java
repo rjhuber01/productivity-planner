@@ -25,7 +25,8 @@ public class pomodoroServlet extends HttpServlet {
 			taskController = new Assistant();
 			session.setAttribute("taskController", taskController);
 		}
-
+        ArrayList<Task> tasks = taskController.getAllTasks();
+        req.setAttribute("tasks", tasks);
 		// call JSP to generate empty form
 		req.getRequestDispatcher("/_view/pomoTimer.jsp").forward(req, resp);
 	}
