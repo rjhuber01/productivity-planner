@@ -38,6 +38,7 @@
       <div class="userSummary">
         <h1> Pomodoro Timer </h1>
       </div>
+      <div>
       <form id="taskForm">
     	<select id="taskSelect">
         	<c:forEach var="task" items="${sessionScope.taskController.getAllTasks()}">
@@ -46,7 +47,7 @@
     	</select>
     	<button id="startTimerBtn">Start Timer</button>
 	</form>
-
+	</div>
 	<div class="timer">
     	<h2 id="countdown">00:00:00</h2>
 	</div>
