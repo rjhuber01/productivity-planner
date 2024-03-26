@@ -53,10 +53,6 @@
     			</select>
     			<button id="startTimerBtn">Start Timer</button>
 			</form>
-
-		<div class="timer">
-    		<h2 id="countdown">00:00:00</h2>
-    	</div>
 		<script>
     	document.getElementById('startTimerBtn').addEventListener('click', function() {
         	var timeInSeconds = parseInt(document.getElementById('taskSelect').value);
@@ -82,7 +78,7 @@
         	}, 1000);
     	}
 		</script>
-	</c:if>
+		</c:if>
 		<div class="timer">
     		<h2 id="countdown">00:00:00</h2>
 		</div>

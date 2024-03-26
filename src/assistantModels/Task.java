@@ -79,7 +79,10 @@ public class Task {
     public int getColor(){
         return color;
     }
-
+    
+    //status 1 = Incomplete
+    //status 2 = In Progress
+    //status 3 = Complete
     public void setStatus(int status){
         this.status = status;
     }

@@ -41,7 +41,7 @@ public class pomodoroServlet extends HttpServlet {
 		//req.setAttribute("errorMessage", errorMessage);
 		
 		// Forward to view to render the result HTML document
-		req.getRequestDispatcher("/_view/login.jsp").forward(req, resp);
+		req.getRequestDispatcher("/_view/pomoTimer.jsp").forward(req, resp);
 	}
 
 	// gets double from the request with attribute named s
