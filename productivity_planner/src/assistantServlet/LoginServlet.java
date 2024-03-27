@@ -63,13 +63,17 @@ public class LoginServlet extends HttpServlet {
 	        
 	        // Authentication failed, redirect back to login page with error message
 	        resp.sendRedirect("login.jsp?error=1");
+<<<<<<< Updated upstream
 	        
 	    
+=======
+>>>>>>> Stashed changes
 		
 		// holds the error message text, if there is any
 		String errorMessage = null;
 		
 		 // Authenticate user using actorLogin and accountStorage
+<<<<<<< Updated upstream
 			private actorAccount authenticate(String email, String password) {
 	        // Retrieve account from accountStorage based on email
 	        accountStorage storage = new accountStorage();
@@ -92,3 +96,26 @@ public class LoginServlet extends HttpServlet {
 
 	
 }
+=======
+		
+		req.getRequestDispatcher("/_view/login.jsp").forward(req, resp);
+	}
+	
+		private actorAccount authenticate(String email, String password) {
+        // Retrieve account from accountStorage based on email
+        accountStorage storage = new accountStorage();
+        actorAccount account = storage.getAccount(email);
+
+        if (account != null) {
+        // Validate password using hashedPassword from the account and hashPassword method
+        	String hashedPassword = hashPassword(saltedPassword);
+        	if (hashedPassword.equals(account.getHashedPassword())) {
+                    // Password matches, return account
+        		return account;
+        	}
+        } 
+            return null; // Authentication failed
+        }
+	
+}
+>>>>>>> Stashed changes

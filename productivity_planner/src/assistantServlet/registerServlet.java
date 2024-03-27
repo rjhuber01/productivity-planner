@@ -33,9 +33,26 @@ public class registerServlet extends HttpServlet {
 		
 		System.out.println("Login Servlet: doPost");
 		
-		// holds the error message text, if there is any
-		String errorMessage = null;
+		// create user by getting info and password
+		String firstName = req.getParameter("firstName");
+		System.out.println(firstName);
+        String lastName = req.getParameter("lastName");
+        System.out.println(lastName);
+		String email = req.getParameter("email");
+		System.out.println(email);
+		String password = req.getParameter("password");
+		System.out.println(password);
+	
+		//Create an instance of actorLogin
+		actorLogin login = new actorLogin();
+		String salt = login.getSaltHash();
+		String saltedPassword = password + salt;
+		String hashedPassword = hashPassword(saltedPassword);
+    	
+		login.setPassword(password);
+     
 		
+<<<<<<< Updated upstream
 		// create user by getting info and password
 		String firstName = req.getParameter("firstName");
         String lastName = req.getParameter("lastName");
@@ -64,6 +81,19 @@ public class registerServlet extends HttpServlet {
 			
 		
 		
+=======
+		//Create an instance of Actor and set details
+		accountStorage storage = new accountStorage();
+		storage.createAccount(firstName, lastName, email, hashedPassword);
+		
+		HttpSession session = req.getSession();
+    	session.setAttribute("userAccount", storage.getAccount(email));
+		
+		// Forward to view to render the result HTML document
+    	//resp.sendRedirect("login");
+		req.getRequestDispatcher("/_view/login.jsp").forward(req, resp);	
+	}
+>>>>>>> Stashed changes
 	
 	// Hash the password using SHA-256
     private String hashPassword(String saltedPassword) {
@@ -84,4 +114,8 @@ public class registerServlet extends HttpServlet {
     }
 
 	
+<<<<<<< Updated upstream
 }
+=======
+}
+>>>>>>> Stashed changes

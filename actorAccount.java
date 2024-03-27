@@ -1,9 +1,16 @@
+<<<<<<< Updated upstream:actorAccount.java
 
 public class actorAccount {
 <<<<<<< Updated upstream:actorAccount.java
     private String firstName, lastName, email, password;
    
 =======
+    private String firstName, lastName, email, password, salt, hashedPassword;
+>>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
+=======
+package assistantModels;
+
+public class actorAccount {
     private String firstName, lastName, email, password, salt, hashedPassword;
 >>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
     
@@ -43,9 +50,12 @@ public class actorAccount {
         return password;
     }
 <<<<<<< Updated upstream:actorAccount.java
+<<<<<<< Updated upstream:actorAccount.java
 
     
 =======
+=======
+>>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
     
     public void setSalt(String salt){
         this.salt = salt;
@@ -58,5 +68,8 @@ public class actorAccount {
     public String getHashedPassword(){
         return hashedPassword;
     }
+<<<<<<< Updated upstream:actorAccount.java
+>>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
+=======
 >>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
 }

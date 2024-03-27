@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream:actorLogin.java
+=======
+package assistantModels;
+
+>>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorLogin.java
 public class actorLogin {
     private String email, password, saltHash;
    

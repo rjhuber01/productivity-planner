@@ -10,7 +10,7 @@
     <div class="loginDiv">
       <a href="http://localhost:8081/prodAssistant/login" class="registerButton" method="GET"> Already registered? <br> <br> Log In </a>
       <h3> Register Now </h3>
-      <form>
+      <form method="POST">
         <label for="firstName">First Name:</label><br>
         <input type="text" id="firstName" name="firstName" placeholder = "First Name" required><br><br>
         
