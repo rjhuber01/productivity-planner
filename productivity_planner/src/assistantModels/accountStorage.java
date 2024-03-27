@@ -22,7 +22,7 @@ public class accountStorage{
     public actorAccount getAccount(String email) {
     	for (actorAccount account : accountStorage) {
             if (account.getEmail().equals(email)) {
-            	String hashedPassword = account.getHashedPassword(); 
+            	account.getHashedPassword(); 
                 return account;
             }
         }

@@ -63,19 +63,7 @@ public class registerServlet extends HttpServlet {
 		req.getRequestDispatcher("/_view/login.jsp").forward(req, resp);
 			
 		
-		// decode POSTed form parameters and dispatch to controller
-
-			// check for errors in the form data before using is in a calculatio
-			// otherwise, data is good, do the calculation
-			// must create the controller each time, since it doesn't persist between POSTs
-			
 		
-		// add result objects as attributes
-		// this adds the errorMessage text and the result to the response
-		//req.setAttribute("errorMessage", errorMessage);
-		
-		
-	}
 	
 	// Hash the password using SHA-256
     private String hashPassword(String saltedPassword) {
