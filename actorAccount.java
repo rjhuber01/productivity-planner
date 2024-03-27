@@ -1,7 +1,11 @@
 
 public class actorAccount {
+<<<<<<< Updated upstream:actorAccount.java
     private String firstName, lastName, email, password;
    
+=======
+    private String firstName, lastName, email, password, salt, hashedPassword;
+>>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
     
     public actorAccount() {
 
@@ -38,6 +42,21 @@ public class actorAccount {
     public String getPassword(){
         return password;
     }
+<<<<<<< Updated upstream:actorAccount.java
 
     
+=======
+    
+    public void setSalt(String salt){
+        this.salt = salt;
+    }
+
+    public String getSalt(){
+        return salt;
+    }
+
+    public String getHashedPassword(){
+        return hashedPassword;
+    }
+>>>>>>> Stashed changes:productivity_planner/src/assistantModels/actorAccount.java
 }
