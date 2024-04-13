@@ -6,6 +6,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
+
+import assistantModels.*;
+
 
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -26,30 +31,61 @@ public class LoginServlet extends HttpServlet {
 		
 		System.out.println("Login Servlet: doPost");
 		
+		 String email = req.getParameter("email");
+	     String password = req.getParameter("password");
+	     
+	     // Create an instance of actorLogin
+	        actorLogin login = new actorLogin();
+	   // Retrieve the salt from the accountStorage based on the email
+	        accountStorage storage = new accountStorage();
+	        String salt = storage.getSaltByEmail(email);
+	        
+	        if (salt != null) {
+	            String saltedPassword = password + salt;
+	            // Hash the salted password
+	            String hashedPassword = login.hashPassword(saltedPassword);
+	            
+	            actorAccount account = storage.getAccount(email);
+	            
+	            if (account != null && hashedPassword.equals(account.getPassword())) {
+	            // Re-hash the entered password
+	        	// Authentication successful, store account details in session
+	            	HttpSession session = req.getSession();
+	            	//getAttribute ?
+	            	session.setAttribute("account", account);
+	            
+	            	// Redirect to home page
+	            	resp.sendRedirect("dashboard.jsp");
+	            	return;
+	            }
+	        
+	        }
+	        
+	        // Authentication failed, redirect back to login page with error message
+	        resp.sendRedirect("login.jsp?error=1");
+		
 		// holds the error message text, if there is any
 		String errorMessage = null;
 		
-		// decode POSTed form parameters and dispatch to controller
-
-			// check for errors in the form data before using is in a calculatio
-			// otherwise, data is good, do the calculation
-			// must create the controller each time, since it doesn't persist between POSTs
-			
+		 // Authenticate user using actorLogin and accountStorage
 		
-		// add result objects as attributes
-		// this adds the errorMessage text and the result to the response
-		//req.setAttribute("errorMessage", errorMessage);
-		
-		// Forward to view to render the result HTML document
 		req.getRequestDispatcher("/_view/login.jsp").forward(req, resp);
 	}
+	
+		private actorAccount authenticate(String email, String password) {
+        // Retrieve account from accountStorage based on email
+        accountStorage storage = new accountStorage();
+        actorAccount account = storage.getAccount(email);
 
-	// gets double from the request with attribute named s
-	private Double getDoubleFromParameter(String s) {
-		if (s == null || s.equals("")) {
-			return null;
-		} else {
-			return Double.parseDouble(s);
-		}
-	}
+        if (account != null) {
+        // Validate password using hashedPassword from the account and hashPassword method
+        	String hashedPassword = hashPassword(saltedPassword);
+        	if (hashedPassword.equals(account.getHashedPassword())) {
+                    // Password matches, return account
+        		return account;
+        	}
+        } 
+            return null; // Authentication failed
+        }
+	
 }

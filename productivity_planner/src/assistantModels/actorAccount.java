@@ -1,9 +1,7 @@
 package assistantModels;
 
-import java.util.ArrayList;
-
 public class actorAccount {
-    private String firstName, lastName, email, password;
+    private String firstName, lastName, email, password, salt, hashedPassword;
     
     public actorAccount() {
 
@@ -39,5 +37,17 @@ public class actorAccount {
 
     public String getPassword(){
         return password;
+    }
+    
+    public void setSalt(String salt){
+        this.salt = salt;
+    }
+
+    public String getSalt(){
+        return salt;
+    }
+
+    public String getHashedPassword(){
+        return hashedPassword;
     }
 }

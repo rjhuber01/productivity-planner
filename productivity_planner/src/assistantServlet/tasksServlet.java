@@ -55,16 +55,17 @@ public class tasksServlet extends HttpServlet {
 		String statusString = req.getParameter("status");
 		int status = Integer.parseInt(statusString);
 		String taskDescription = req.getParameter("taskDescription");
-		taskID += 1;
-		System.out.println("Task ID Incremented: " + taskID);
 		
 		//Get all tasks and then see if it exists. If it exists, modify or else create new. 
+		System.out.println(taskID);
+		System.out.println(taskController.getTaskByID(taskID));
 		if(taskController.getTaskByID(taskID) != null) {
 			//Task already exists 
 			Task existingTask = taskController.getTaskByID(taskID);
 			taskController.updateExistingTask(existingTask, taskName, taskFolder, dueDate, expectedTime, status, taskDescription);
 		} else {
 			//Task does not exist...new. 
+			taskID += 1;
 			taskController.setTask(taskName, taskFolder, dueDate, expectedTime, status, taskDescription);
 		}
 		

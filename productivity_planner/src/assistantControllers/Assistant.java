@@ -64,7 +64,7 @@ public class Assistant {
     
     public void setTask(String taskName, String taskFolder, String dueDate, int expectedTime, int status, String taskDescription) {
     	Task task = new Task();
-    	task.setTaskID(++taskIndexCounter);
+    	task.setTaskID(taskIndexCounter++);
     	task.setTaskName(taskName);
     	task.setFolderName(taskFolder);
     	task.setDueDate(dueDate);
@@ -117,6 +117,4 @@ public class Assistant {
     public int getTaskCounter() {
     	return taskIndexCounter;
     }
-
-
 }  
