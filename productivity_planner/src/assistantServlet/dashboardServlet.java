@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import assistantControllers.Assistant;
 
 public class dashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -16,7 +19,15 @@ public class dashboardServlet extends HttpServlet {
 
 		System.out.println("Dashboard Servlet: doGet");	
 		
-		// call JSP to generate empty form
+		HttpSession session = req.getSession(true);
+		Assistant taskController = (Assistant) session.getAttribute("taskController");
+		if(taskController == null) {
+			taskController = new Assistant();
+			session.setAttribute("taskController", taskController);
+		}
+		
+		
+		
 		req.getRequestDispatcher("/_view/dashboard.jsp").forward(req, resp);
 	}
 	
@@ -26,6 +37,8 @@ public class dashboardServlet extends HttpServlet {
 		
 		System.out.println("Dashboard Servlet: doPost");
 		
+		HttpSession session = req.getSession(true);
+		session.getAttribute("taskController");
 		// holds the error message text, if there is any
 		String errorMessage = null;
 		

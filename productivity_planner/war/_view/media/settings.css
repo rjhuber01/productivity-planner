@@ -1,0 +1,172 @@
+.settingsContainer {
+  display: flex;
+}
+
+.settingsText, .settingsCommand {
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.settingsText p {
+  margin: 60px auto;
+}
+
+#userEmail {
+  display: inline-block;
+  margin-right: 25px;
+  margin-top: 56px;
+}
+
+.settingsAction {
+  margin: 20px auto;
+  background: none;
+  color: rgba(204,204,204, 0.7);
+  border: solid;
+  padding: 10px 16px;
+  border-color: rgba(204,204,204, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.14s;
+}
+
+.settingsAction:hover {
+  transform: scale(1.15);
+}
+
+.settingsAction:active {
+  transform: scale(0.95);
+}
+.dataManagementContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#deleteData, #deleteAccount {
+  margin-right: 30px;
+  border-color: rgba(255,0,0, 0.65);
+  color: rgba(255,0,0, 0.9);
+}
+
+/* Popup Content */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  width: 50%;
+  height: auto;
+  color: rgb(51,51,51);
+}
+
+.popup p {
+  font-size: 20px;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.popup-content {
+  position: relative;
+}
+
+.finalWarning {
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.userInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+
+  padding: 20px 40px;
+}
+
+.inputContainer label {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.inputContainer input {
+  border-radius: 32px;
+  border: none;
+  text-indent: 5px;
+  padding: 6px 12px;
+  margin-right: 80px;
+}
+
+.inputContainer input,
+.inputContainer p {
+  flex: 2;
+}
+
+.submit {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 32px;
+  font-size: 24px;
+  transition: 0.2s ease-in;
+}
+
+.submit:hover {
+  background-color: #333;
+  color: lightgrey;
+}
+
+.submit:active {
+  background-color: #1a1a1a;
+  color: lightgrey;
+}
+
+.warningIcon {
+  vertical-align: middle;
+  width: 40px;
+  height: 40px;
+}
+
+.deleteSubmit {
+  display: block;
+  margin: 0 auto;
+  font-size: 24px;
+  padding: 10px 20px;
+  background-color: #dc3545; /* Red color for delete button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #28a745; /* Green color for progress */
+  border-radius: 5px;
+}
+
+

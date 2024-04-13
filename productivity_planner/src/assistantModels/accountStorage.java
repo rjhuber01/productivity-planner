@@ -1,5 +1,6 @@
 package assistantModels;
 import java.util.ArrayList;
+import assistantModels.actorAccount;
 
 public class accountStorage{
     private static ArrayList<actorAccount> accountStorage = new ArrayList<>();
@@ -21,9 +22,19 @@ public class accountStorage{
     public actorAccount getAccount(String email) {
     	for (actorAccount account : accountStorage) {
             if (account.getEmail().equals(email)) {
+            	account.getHashedPassword(); 
                 return account;
             }
         }
         return null;
+    }
+    
+    public String getSaltByEmail(String email) {
+        for (actorAccount account : accountStorage) {
+            if (account.getEmail().equals(email)) {
+                return account.getSalt(); 
+            }
+        }
+        return null; // User not found or salt not available
     }
 }
