@@ -39,7 +39,6 @@ public class calendarServlet extends HttpServlet {
 		// add result objects as attributes
 		// this adds the errorMessage text and the result to the response
 		//req.setAttribute("errorMessage", errorMessage);
-		
 		// Forward to view to render the result HTML document
 		req.getRequestDispatcher("/_view/login.jsp").forward(req, resp);
 	}
