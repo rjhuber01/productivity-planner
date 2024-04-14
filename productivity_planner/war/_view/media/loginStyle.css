@@ -65,6 +65,7 @@ body {
   right: 60px;
   top: 30%;
   width: 20%;
+  padding: 6px 16px;
 }
 
 .error p {
