@@ -3,9 +3,8 @@ import java.util.Date;
 
 
 public class Task {
-    private String taskName, taskDescription, folderName, dueDate;
-    private int timeUnit, expectedTime, folderID, color, frequency, rank, status;
-    private int taskID;
+    private String taskName, taskDescription, folderName, dueDate, timeUnit;
+	private int expectedTime, folderID, color, frequency, rank, status, taskID, accountID;
     //private Date dueDate;
 
     //private Date dueDate;
@@ -62,14 +61,14 @@ public class Task {
     }
 
     // TODO: Fix date
-    public void setTimeUnit(int timeUnit){
+    public void setTimeUnit(String timeUnit){
         this.timeUnit = timeUnit;
         //this.days = days;
         //this.hours = hours;
         //this.minutes = minutes;
     }
 
-    public int getTimeUnit(){
+    public String getTimeUnit(){
         return timeUnit;
     }
 
@@ -120,6 +119,14 @@ public class Task {
     public void setTaskID(int taskID) {
     	this.taskID = taskID;
     }
+    
+    public void setAccountID(int accountID) {
+    	this.accountID = accountID;
+    }
+    
+    public int getAccountID() {
+    	return taskID;
+    }    
     
     public void updateTask(Task newTask) {
     	//Task Name & Due Date are always required so never null
