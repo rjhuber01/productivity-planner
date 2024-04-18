@@ -4,8 +4,9 @@ import java.util.Date;
 
 public class Task {
     private String taskName, taskDescription, folderName, dueDate;
-    private int timeUnit, expectedTime, folderID, color, frequency, rank, status;
+    private int expectedTime, folderID, color, frequency, rank, status;
     private int taskID;
+    private String timeUnit;
     //private Date dueDate;
 
     //private Date dueDate;
@@ -62,14 +63,14 @@ public class Task {
     }
 
     // TODO: Fix date
-    public void setTimeUnit(int timeUnit){
+    public void setTimeUnit(String timeUnit){
         this.timeUnit = timeUnit;
         //this.days = days;
         //this.hours = hours;
         //this.minutes = minutes;
     }
 
-    public int getTimeUnit(){
+    public String getTimeUnit(){
         return timeUnit;
     }
 
