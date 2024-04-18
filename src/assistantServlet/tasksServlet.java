@@ -36,30 +36,19 @@ public class tasksServlet extends HttpServlet {
 		//Declaration of all variables BEFORE creating controller & handle null exceptions
 		String taskName, taskFolder, dueDate, taskTime, timeUnit;
 		String status, rank, taskDescription, errorMessage;
-		taskName = req.getParameter("taskName");
-		taskFolder = req.getParameter("taskFolder") != null ? req.getParameter("taskFolder") : "Tasks" ;
-		dueDate = req.getParameter("dueDate");
-		taskTime = req.getParameter("taskTime") != null ? req.getParameter("taskTime") : "30" ;
-		timeUnit = req.getParameter("timeUnit") != null ? req.getParameter("timeUnit") : "minutes" ;
-		status = req.getParameter("status") != null ? req.getParameter("status") : "Incomplete" ;
-		rank = req.getParameter("rank") != null ? req.getParameter("rank") : "Unimportant" ;
-		taskDescription = req.getParameter("taskDescription") != null ? req.getParameter("taskDescription") : "" ;
 		
-		//These are set up in JSP to be required fields but issue error just in case
-		if(taskName == null || dueDate == null) {
-			errorMessage = "Missing Information. Please fill out ALL required fields";
-			//TODO: Send error message to page
+		try {
+			taskName = req.getParameter("taskName");
+			taskFolder = req.getParameter("taskFolder") != null && !req.getParameter("taskFolder").isEmpty() ? req.getParameter("taskFolder") : "Tasks" ;
+			dueDate = req.getParameter("dueDate");
+			taskTime = req.getParameter("taskTime") != null && !req.getParameter("taskTime").isEmpty() ? req.getParameter("taskTime") : "30" ;
+			timeUnit = req.getParameter("timeUnit") != null ? req.getParameter("timeUnit") : "minutes" ;
+			status = req.getParameter("status") != null ? req.getParameter("status") : "Incomplete" ;
+			rank = req.getParameter("rank") != null ? req.getParameter("rank") : "Unimportant" ;
+			taskDescription = req.getParameter("taskDescription") != null ? req.getParameter("taskDescription") : "" ;
+		} catch (NullPointerException e) {
+			errorMessage = "Missing Information. Please try again. :-)" ;
 		}
-		
-		
-		System.out.println("1 " + taskName);
-		System.out.println("2 " + taskFolder); //BLANK
-		System.out.println("3 " + dueDate); //Prints out in YYYY-MM-DD format
-		System.out.println("4 " + taskTime); //BLANK
-		System.out.println("5 " + timeUnit);
-		System.out.println("6 " + status);
-		System.out.println("7 " + rank);
-		System.out.println("8 " + taskDescription); 
 		
 		
 		HttpSession session = req.getSession(true);
@@ -71,17 +60,13 @@ public class tasksServlet extends HttpServlet {
 		
 		//Retrieve parameters from task.JSP in ArrayList form
 		// Order relates to
+		taskID = taskController.getTaskCounter();
+
+		//TODO: Converted to a number from the JS
 		
-		//TODO: Converted to a number from the JSP
-		String expectedTimeString = req.getParameter("expectedTime");
-		
-		/* int expectedTime = Integer.parseInt(expectedTimeString);
-		String statusString = req.getParameter("status");
-		int status = Integer.parseInt(statusString);
-		String taskDescription = req.getParameter("taskDescription");
 		
 		//Get all tasks and then see if it exists. If it exists, modify or else create new. 
-		System.out.println(taskID);
+		/* System.out.println(taskID);
 		System.out.println(taskController.getTaskByID(taskID));
 		if(taskController.getTaskByID(taskID) != null) {
 			//Task already exists 

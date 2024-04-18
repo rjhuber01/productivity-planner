@@ -1,7 +1,6 @@
 package assistantControllers;
 
 import java.util.ArrayList;
-
 import assistantModels.Task;
 import assistantModels.actorAccount;
 import assistantModels.taskFolder;

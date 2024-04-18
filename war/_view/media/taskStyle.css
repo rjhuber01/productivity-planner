@@ -67,6 +67,8 @@
   z-index: 50;
 }
 
+/* This is the form that populates in the window. */
+
       .actorTaskForm input:not([type="radio"]) {
         display: block;
         display: flex;
@@ -111,7 +113,7 @@
         margin-left: 8px;
         height: 50%;
       }
-      
+
 #statusNotStarted {
   margin-top: 12px;
 }
