@@ -83,23 +83,23 @@
         <div class="addTaskForm" id="taskForm">    
           
           <!--TODO: Change the styling for the form to make it more friendly. -->
-		<form class="actorTaskForm" method="POST">
+         <form class="actorTaskForm" method="POST">
 	        <div class="basicTaskInfo">
 	          <input type="hidden" id="userID" value="userID" />
-	
+
 	          <label for="taskName" class="labelName"> Task Name: <span class="required">*</span> </label>
 	          <input type="text" id="taskName" name="taskName" placeholder="Enter a Name for the Task" required/>
-	
+
 	          <label for="taskFolder" class="labelName"> Task Folder: </label>
 	          <input type="text" id="taskFolder" name="taskFolder" placeholder="Give me a folder!"/>
-	
+
 	          <label for="dueDate" class="labelName"> Due Date: <span class="required">*</span> </label>
 	          <input type="date" id="dueDate" name="dueDate" required/>
-	
+
 	          <div class="timeHandler">
 	            <label for="taskTime" class="labelName"> Task Time: </label>
 	            <input type="number" id="taskTime" name="taskTime" placeholder="Enter time to finish"/>
-	
+
 	            <select id="timeUnit" name="timeUnit">
 	              <option value="minutes"> Minutes </option>
 	              <option value="hours"> Hours </option>
@@ -107,21 +107,21 @@
 	            </select>
 	          </div>
 	        </div>
-	
+
 	        <div class="radioTaskInfo">
 	          <label class="labelName"> <strong> Progress: </strong> </label>
-	          
+
 	          <input type="radio" id="notStarted" name="status" value="Not Started"/>
 	          <label for="notStarted">Not Started </label>
 	          <input type="radio" id="inProgress" name="status" value="In Progress"/>
 	          <label for="inProgress"> In Progress </label>
 	          <input type="radio" id="completed" name="status" value="Completed" />
 	          <label for="completed"> Completed </label>
-	          
+
 	          <br />
-	
+
 	          <label class="labelName"> <strong> Priority: </strong> </label>
-	          
+
 	          <input type="radio" id="notImportant" name="rank" value="Not Important" />
 	          <label for="notImportant"> Not Important </label>
 	          <input type="radio" id="important" name="rank" value="Important" />
@@ -129,13 +129,12 @@
 	          <input type="radio" id="urgent" name="rank" value="Urgent"/>
 	          <label for="urgent"> Urgent </label>
 	        </div>
-	        
+
 	        <label for="taskDescription" class="labelName"> Task Description: </label>
 	        <br />
 	        <textarea id="taskDescription" name="taskDescription" rows="8" cols="50"></textarea>
 	        <input type="submit" id="submitTask" name="submitTask" value="Submit" />
-      </form>
-          
+      	</form>
         </div>
       </div>
     </div>
