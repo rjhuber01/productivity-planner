@@ -140,9 +140,13 @@
 			// update the HTML of the dates element 
 			// with the generated calendar
 			day.innerHTML = lit;
+
+			fetchTasks()
+        	.then(tasks => populateCalendarWithTasks(tasks));
 		}
 		
 		manipulate();
+		window.onload = manipulate;
 		
 		// Attach a click event listener to each icon
 		prenexIcons.forEach(icon => {
@@ -179,6 +183,31 @@
 				manipulate();
 			});
 		});
+
+		function fetchTasks() {
+    		return fetch('http://localhost:8081/prodAssistant/tasks') 
+        .then(response => response.json())
+        .catch(error => console.error('Error fetching tasks:', error));
+		}
+
+		function populateCalendarWithTasks(tasks) {
+    
+    	tasks.forEach(task => {
+       
+        const taskName = task.taskName;
+        const dueDate = task.dueDate; // Assuming dueDate is in the format 'YYYY-MM-DD'
+
+        const calendarDateElement = document.querySelector(`.calendar-dates li[data-date="${dueDate}"]`);
+        if (calendarDateElement) {
+            const taskList = calendarDateElement.querySelector('ul');
+            const taskListItem = document.createElement('li');
+            taskListItem.textContent = taskName;
+            taskList.appendChild(taskListItem);
+        }
+    });
+}
+
+
     </script>
   </body>
 
