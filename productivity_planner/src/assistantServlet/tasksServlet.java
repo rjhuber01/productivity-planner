@@ -33,6 +33,29 @@ public class tasksServlet extends HttpServlet {
 		//Create HTTP Session and keep assistantController
 		System.out.println("Task Servlet: doPost");
 		
+<<<<<<< Updated upstream
+=======
+		//Declaration of all variables BEFORE creating controller & handle null exceptions
+		String taskName, taskFolder, dueDate, taskTime, timeUnit;
+		String status, rank, taskDescription, errorMessage;
+		
+		try {
+			taskName = req.getParameter("taskName");
+			taskFolder = req.getParameter("taskFolder") != null && !req.getParameter("taskFolder").isEmpty() ? req.getParameter("taskFolder") : "Tasks" ;
+			dueDate = req.getParameter("dueDate");
+			taskTime = req.getParameter("taskTime") != null && !req.getParameter("taskTime").isEmpty() ? req.getParameter("taskTime") : "30" ;
+			timeUnit = req.getParameter("timeUnit") != null ? req.getParameter("timeUnit") : "minutes" ;
+			status = req.getParameter("status") != null ? req.getParameter("status") : "Incomplete" ;
+			rank = req.getParameter("rank") != null ? req.getParameter("rank") : "Unimportant" ;
+			taskDescription = req.getParameter("taskDescription") != null ? req.getParameter("taskDescription") : "" ;
+		} catch (NullPointerException e) {
+			errorMessage = "Missing Information. Please try again. :-)" ;
+			
+		}
+		
+		
+		
+>>>>>>> Stashed changes
 		HttpSession session = req.getSession(true);
 		Assistant taskController = (Assistant) session.getAttribute("taskController");
 		if(taskController == null) {
