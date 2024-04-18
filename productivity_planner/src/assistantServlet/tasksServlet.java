@@ -33,8 +33,6 @@ public class tasksServlet extends HttpServlet {
 		//Create HTTP Session and keep assistantController
 		System.out.println("Task Servlet: doPost");
 		
-<<<<<<< Updated upstream
-=======
 		//Declaration of all variables BEFORE creating controller & handle null exceptions
 		String taskName, taskFolder, dueDate, taskTime, timeUnit;
 		String status, rank, taskDescription, errorMessage;
@@ -50,12 +48,9 @@ public class tasksServlet extends HttpServlet {
 			taskDescription = req.getParameter("taskDescription") != null ? req.getParameter("taskDescription") : "" ;
 		} catch (NullPointerException e) {
 			errorMessage = "Missing Information. Please try again. :-)" ;
-			
 		}
 		
 		
-		
->>>>>>> Stashed changes
 		HttpSession session = req.getSession(true);
 		Assistant taskController = (Assistant) session.getAttribute("taskController");
 		if(taskController == null) {
@@ -66,21 +61,12 @@ public class tasksServlet extends HttpServlet {
 		//Retrieve parameters from task.JSP in ArrayList form
 		// Order relates to
 		taskID = taskController.getTaskCounter();
-		System.out.println("TaskID from Counter: " + taskID);
-		String taskName = req.getParameter("taskName");
-		String taskFolder = req.getParameter("taskFolder");
-		String dueDate = req.getParameter("dueDate");
+
+		//TODO: Converted to a number from the JS
 		
-		//TODO: Converted to a number from the JSP
-		String expectedTimeString = req.getParameter("expectedTime");
-		
-		int expectedTime = Integer.parseInt(expectedTimeString);
-		String statusString = req.getParameter("status");
-		int status = Integer.parseInt(statusString);
-		String taskDescription = req.getParameter("taskDescription");
 		
 		//Get all tasks and then see if it exists. If it exists, modify or else create new. 
-		System.out.println(taskID);
+		/* System.out.println(taskID);
 		System.out.println(taskController.getTaskByID(taskID));
 		if(taskController.getTaskByID(taskID) != null) {
 			//Task already exists 
@@ -90,7 +76,7 @@ public class tasksServlet extends HttpServlet {
 			//Task does not exist...new. 
 			taskID += 1;
 			taskController.setTask(taskName, taskFolder, dueDate, expectedTime, status, taskDescription);
-		}
+		} */
 		
 		//TODO: Handle Exceptions for Non-Required Fields
 		//DISCUSS: Why does refreshing the page not do what I need to do? 

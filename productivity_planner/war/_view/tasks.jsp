@@ -83,25 +83,58 @@
         <div class="addTaskForm" id="taskForm">    
           
           <!--TODO: Change the styling for the form to make it more friendly. -->
-          <form class="actorTaskForm" method="POST">
-            <label for="taskName" class="labelName">Task Name<span class="required">*</span> <input type="text" id="taskName" name="taskName" required> </label>
+         <form class="actorTaskForm" method="POST">
+	        <div class="basicTaskInfo">
+	          <input type="hidden" id="userID" value="userID" />
 
-            <label for="taskFolder" class="labelName">Folder:<input type="text" id="taskFolder" name="taskFolder"> </label>
+	          <label for="taskName" class="labelName"> Task Name: <span class="required">*</span> </label>
+	          <input type="text" id="taskName" name="taskName" placeholder="Enter a Name for the Task" required/>
 
-            <label for="dueDate" class="labelName">Due Date<span class="required">*</span> <input type="date" id="dueDate" name="dueDate" required> </label>
+	          <label for="taskFolder" class="labelName"> Task Folder: </label>
+	          <input type="text" id="taskFolder" name="taskFolder" placeholder="Give me a folder!"/>
 
-            <label for="expectedTime" class="labelName">Task Time:<input type="number" id="expectedTime" name="expectedTime"> </label>
+	          <label for="dueDate" class="labelName"> Due Date: <span class="required">*</span> </label>
+	          <input type="date" id="dueDate" name="dueDate" required/>
 
-            <label for="status" class="labelName"> Progress: </label>
-            <label for="statusNotStarted"> <span class="statusText"> Not Started </span> <input type="radio" id="statusNotStarted" name="status" value="0"> </label>
-            <label for="statusInProgress"> <span class="statusText"> In Progress </span> <input type="radio" id="statusInProgress" name="status" value="1"> </label>
-            <label for="statusComplete"> <span class="statusText"> Complete </span> <input type="radio" id="statusComplete" name="status" value="2"> </label>
+	          <div class="timeHandler">
+	            <label for="taskTime" class="labelName"> Task Time: </label>
+	            <input type="number" id="taskTime" name="taskTime" placeholder="Enter time to finish"/>
 
-            <label for="taskDescription" class="labelName"> Task Description </label>
-            <textarea id="taskDescription" name="taskDescription" rows="8" cols="50"> </textarea>
+	            <select id="timeUnit" name="timeUnit">
+	              <option value="minutes"> Minutes </option>
+	              <option value="hours"> Hours </option>
+	              <option value="days"> Days </option>
+	            </select>
+	          </div>
+	        </div>
 
-            <input type="submit" id="submitTask" name="submitTask" value="Submit"> 
-          </form>
+	        <div class="radioTaskInfo">
+	          <label class="labelName"> <strong> Progress: </strong> </label>
+
+	          <input type="radio" id="notStarted" name="status" value="Not Started"/>
+	          <label for="notStarted">Not Started </label>
+	          <input type="radio" id="inProgress" name="status" value="In Progress"/>
+	          <label for="inProgress"> In Progress </label>
+	          <input type="radio" id="completed" name="status" value="Completed" />
+	          <label for="completed"> Completed </label>
+
+	          <br />
+
+	          <label class="labelName"> <strong> Priority: </strong> </label>
+
+	          <input type="radio" id="notImportant" name="rank" value="Not Important" />
+	          <label for="notImportant"> Not Important </label>
+	          <input type="radio" id="important" name="rank" value="Important" />
+	          <label for="important"> Important </label>
+	          <input type="radio" id="urgent" name="rank" value="Urgent"/>
+	          <label for="urgent"> Urgent </label>
+	        </div>
+
+	        <label for="taskDescription" class="labelName"> Task Description: </label>
+	        <br />
+	        <textarea id="taskDescription" name="taskDescription" rows="8" cols="50"></textarea>
+	        <input type="submit" id="submitTask" name="submitTask" value="Submit" />
+      	</form>
         </div>
       </div>
     </div>
