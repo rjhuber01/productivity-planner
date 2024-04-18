@@ -1,5 +1,5 @@
-
-*.class
-*.project
-*.dat
-*.db
+/*.class
+/*.project
+/*.classpath
+/*.dat
+/*.db
